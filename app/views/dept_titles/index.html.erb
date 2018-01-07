@@ -1,0 +1,17 @@
+<h1>Dept / Titles</h1>
+
+<table>
+  <thead>
+    <th>Name</th>
+    <th colspan='2'>Actions</th>
+  </thead>
+  <tbody>
+    <% @dept_titles.each do |title| %>
+      <tr>
+        <td><%= title.name %></td>
+        <td><%= link_to 'Edit', edit_dept_title_path(title) %></td>
+        <td><%= link_to 'Remove', title, method: :delete, data: { confirm: 'Remove...positive?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

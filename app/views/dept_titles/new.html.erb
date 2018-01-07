@@ -1,0 +1,13 @@
+<h1>Add Dept / Title</h1>
+
+<%= form_for(@dept_title) do |f| %>
+
+  <div class="">
+    <%= f.label :name%>
+    <%= f.text_field :name, id: :dept_title %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

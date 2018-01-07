@@ -1,0 +1,2 @@
+module DeptTitlesHelper
+end
