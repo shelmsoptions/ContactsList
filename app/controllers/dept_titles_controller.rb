@@ -29,6 +29,7 @@ class DeptTitlesController < ApplicationController
 
   def destroy
     @dept_title.destroy
+    redirect_to dept_titles_path
   end
   
   private

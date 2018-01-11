@@ -1,0 +1,17 @@
+%h1 Dept / Titles
+
+%table.table.table-responsiveness.table-striped.table-bordered.table-hover
+  %thead
+    %th Name
+    %th{colspan:'2'}Action(s)
+
+  %tbody
+    - @dept_titles.each do |title|
+      %tr
+        %td= title.name 
+        %td= link_to 'Edit', edit_dept_title_path(title)
+        %td= link_to 'Remove', title, method: :delete, data: { confirm: 'Remove...positive?' }
+
+= link_to 'New Department/Title', new_dept_title_path
+%br
+= link_to 'Back', contacts_path

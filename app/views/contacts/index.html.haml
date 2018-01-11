@@ -1,0 +1,26 @@
+%h1 Contacts List
+
+%table.table.table-responsiveness.table-striped.table-bordered.table-hover
+  %thead 
+    %th First Name
+    %th Last Name
+    %th Dept / Title
+    %th Ext
+    %th Email
+    %th Cell
+  %tbody
+    - @contacts.each do |contact|
+      %tr
+        %td= contact.first_name
+        %td= contact.last_name
+        %td= contact.dept_title_id
+        %td= contact.phone_extension
+        %td= contact.email
+        %td= contact.cell_phone
+  
+  
+
+
+= link_to 'Add New Contact', new_contact_path
+%br
+= link_to 'Add Department/Title', dept_titles_path

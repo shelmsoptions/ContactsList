@@ -1,0 +1,28 @@
+= simple_form_for @contact do |f|
+  .panel-body
+    .form-group
+      = f.label :first_name
+      = f.text_field :first_name
+      
+    .form-group
+      = f.label :last_name
+      = f.text_field :last_name
+      
+    .form-group
+      = f.label :dept_title
+      = collection_select :dept_title, :dept_title_id, DeptTitle.all, :id, :name, { prompt: 'Select Dept/Title' }
+      
+    .form-group
+      = f.label :phone_extension
+      = f.text_field :phone_extension
+      
+    .form-group
+      = f.label :email
+      = f.text_field :email
+      
+    .form-group
+      = f.label :cell_phone
+      = f.text_field :cell_phone
+      
+    .form-actions
+      = f.submit 'Submit'
