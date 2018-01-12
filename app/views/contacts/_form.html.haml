@@ -10,7 +10,7 @@
       
     .form-group
       = f.label :dept_title
-      = collection_select :dept_title, :dept_title_id, DeptTitle.all, :id, :name, { prompt: 'Select Dept/Title' }
+      = collection_select :contact, :dept_title_id, DeptTitle.all, :id, :name, { prompt: 'Select Dept/Title' }
       
     .form-group
       = f.label :phone_extension
@@ -26,3 +26,5 @@
       
     .form-actions
       = f.submit 'Submit'
+    
+    =link_to 'Back', contacts_path, class: 'btn'

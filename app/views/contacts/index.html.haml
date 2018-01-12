@@ -8,6 +8,7 @@
     %th Ext
     %th Email
     %th Cell
+    %th{ colspan:'2' }Action(s)
   %tbody
     - @contacts.each do |contact|
       %tr
@@ -17,7 +18,8 @@
         %td= contact.phone_extension
         %td= contact.email
         %td= contact.cell_phone
-  
+        %td= link_to 'Edit', edit_contact_path(contact)
+        %td= link_to 'Remove', contact, method: :delete, data: { confirm: 'Remove...positive?' }
   
 
 

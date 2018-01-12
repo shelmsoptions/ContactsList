@@ -1,5 +1,4 @@
 class DeptTitlesController < ApplicationController
-  before_action :set_dept_title, only: [:destroy]
   
   def index
     @dept_titles = DeptTitle.all
@@ -22,21 +21,25 @@ class DeptTitlesController < ApplicationController
   end
 
   def edit
+    @dept_title = DeptTitle.find( params[:id] )
   end
 
   def update
+    @dept_title = DeptTitle.find( params[:id] )
+    if @dept_title.update( dept_title_params )
+      redirect_to dept_titles_path
+    else
+      redirect_to edit_dept_title_path
+    end
   end
 
   def destroy
-    @dept_title.destroy
+    DeptTitle.find( params[:id] ).destroy
     redirect_to dept_titles_path
   end
   
   private
-    def set_dept_title
-      @dept_title = DeptTitle.find(params[:id])
-    end
-    
+  
     def dept_title_params
       params.require( :dept_title ).permit( :name )
     end

@@ -21,18 +21,27 @@ class ContactsController < ApplicationController
   end
 
   def edit
-    
+    @contact = Contact.find( params[:id] )
   end
 
   def update
+    @contact = Contact.find( params[:id] )
+    if @contact.update( contact_params )
+      redirect_to contacts_path
+    else
+      redirect_to edit_contact_path
+    end
   end
 
   def destroy
+    Contact.find( params[:id] ).destroy
+    redirect_to contacts_path
   end
   
   private
+  
   def contact_params
-    params.require( :contact ).permit( :first_name, :last_name, :dept_title_id, 
+    params.require(:contact).permit( :first_name, :last_name, :dept_title_id, 
       :phone_extension, :email, :cell_phone )
   end
 end
