@@ -1,10 +1,11 @@
 = simple_form_for @dept_title do |f|
-  .panel-body
-    .form-group
-      = f.label :name
-      = f.text_field :name
-      
-    .form-actions
-      = f.submit 'Submit'
-      
-    = link_to 'Back', dept_titles_path
+
+
+  .form-group.row
+    = f.label :name
+    = f.text_field :name, {class: 'form-control'}
+    
+  .form-actions
+    = f.submit 'Submit'
+    
+  = link_to 'Back', dept_titles_path
