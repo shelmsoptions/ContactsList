@@ -10,7 +10,8 @@
   
   .form-group.row
     = f.label :dept_title
-    = collection_select :contact, :dept_title_id, DeptTitle.all, :id, :name, { prompt: 'Select Dept/Title' }
+    = collection_select :contact, :dept_title_id, 
+    DeptTitle.all, :id, :name, { prompt: 'Select Dept/Title' }, {class: 'form-control'}
   
   .form-group.row
     = f.label :phone_extension
